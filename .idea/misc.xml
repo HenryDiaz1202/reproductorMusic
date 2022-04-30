@@ -3,7 +3,9 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/PROYECTOS_BUENOS/musicApp/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.22135416666666666" />
         <entry key="..\:/PROYECTOS_BUENOS/musicApp/app/src/main/res/drawable/ic_baseline_music_note_24.xml" value="0.22135416666666666" />
+        <entry key="..\:/PROYECTOS_BUENOS/musicApp/app/src/main/res/drawable/ic_launcher_background.xml" value="0.22135416666666666" />
         <entry key="..\:/PROYECTOS_BUENOS/musicApp/app/src/main/res/layout/activity_main.xml" value="0.24592391304347827" />
         <entry key="..\:/PROYECTOS_BUENOS/musicApp/app/src/main/res/layout/activity_player_activiy.xml" value="0.36666666666666664" />
         <entry key="..\:/PROYECTOS_BUENOS/musicApp/app/src/main/res/layout/list_bg.xml" value="0.20520833333333333" />

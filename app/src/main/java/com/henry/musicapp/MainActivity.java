@@ -88,7 +88,7 @@ public class MainActivity extends AppCompatActivity {
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 String songName = (String) listaDeMusicas.getItemAtPosition(position);
                 startActivity(new Intent(getApplicationContext(), PlayerActiviy.class)
-                .putExtra("músicas",misMusicas)
+                .putExtra("musicas",misMusicas)
                         .putExtra("songname",songName)
                         .putExtra("pos",position));
             }

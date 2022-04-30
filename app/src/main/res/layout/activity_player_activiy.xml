@@ -7,7 +7,7 @@
     tools:context=".PlayerActiviy">
 
     <TextView
-        android:id="@+id/textView"
+        android:id="@+id/txtSong"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
@@ -19,14 +19,14 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <ImageView
-        android:id="@+id/imageView2"
+        android:id="@+id/idCentroImg"
         android:layout_width="177dp"
         android:layout_height="182dp"
         android:layout_marginTop="24dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.504"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView"
+        app:layout_constraintTop_toBottomOf="@+id/txtSong"
         app:srcCompat="@drawable/piano" />
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -36,7 +36,7 @@
         android:layout_marginTop="8dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView2">
+        app:layout_constraintTop_toBottomOf="@+id/idCentroImg">
 
         <SeekBar
             android:id="@+id/seekBar"
@@ -44,12 +44,12 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="8dp"
             android:layout_marginEnd="8dp"
-            app:layout_constraintEnd_toStartOf="@+id/textView3"
-            app:layout_constraintStart_toEndOf="@+id/textView2"
+            app:layout_constraintEnd_toStartOf="@+id/txtEnd"
+            app:layout_constraintStart_toEndOf="@+id/txtStart"
             app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
-            android:id="@+id/textView2"
+            android:id="@+id/txtStart"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="24dp"
@@ -58,7 +58,7 @@
             app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
-            android:id="@+id/textView3"
+            android:id="@+id/txtEnd"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginEnd="24dp"
@@ -76,8 +76,21 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/constraintLayout">
 
+        <com.gauravk.audiovisualizer.visualizer.BlastVisualizer
+            android:id="@+id/wave"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:avColor="@color/av_dark_blue"
+            app:avDensity="0.8"
+            app:avSpeed="normal"
+            app:avType="fill"
+            app:layout_constraintBottom_toBottomOf="@+id/btnPausa"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
         <Button
-            android:id="@+id/button"
+            android:id="@+id/btnAntes"
             android:layout_width="50dp"
             android:layout_height="48dp"
             android:layout_marginStart="50dp"
@@ -89,24 +102,26 @@
             tools:ignore="SpeakableTextPresentCheck" />
 
         <Button
-            android:id="@+id/button4"
+            android:id="@+id/btnPausa"
             android:layout_width="50dp"
             android:layout_height="wrap_content"
-            android:background="@android:drawable/ic_media_play"
+            android:background="@android:drawable/ic_media_pause"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toStartOf="@+id/button5"
-            app:layout_constraintStart_toEndOf="@+id/button"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintEnd_toStartOf="@+id/btnDespues"
+            app:layout_constraintStart_toEndOf="@+id/btnAntes"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:ignore="SpeakableTextPresentCheck" />
 
         <Button
-            android:id="@+id/button5"
+            android:id="@+id/btnDespues"
             android:layout_width="50dp"
             android:layout_height="48dp"
             android:layout_marginEnd="50dp"
             android:background="@android:drawable/ic_media_ff"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toTopOf="parent"
+            tools:ignore="SpeakableTextPresentCheck" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
