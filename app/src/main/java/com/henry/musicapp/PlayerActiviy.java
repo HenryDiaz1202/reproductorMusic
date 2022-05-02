@@ -182,7 +182,6 @@ public class PlayerActiviy extends AppCompatActivity {
         });
     }
 
-    int audio
 
     public void  empezarAnimacion(View view, Float grados){
         ObjectAnimator objectAnimator = ObjectAnimator.ofFloat(imageView,"rotation",0f, grados);

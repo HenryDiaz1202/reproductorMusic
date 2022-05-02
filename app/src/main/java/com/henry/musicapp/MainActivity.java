@@ -6,10 +6,14 @@ import android.Manifest;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.Environment;
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.BaseAdapter;
+import android.widget.EditText;
+import android.widget.Filter;
 import android.widget.ListView;
 import android.widget.TextView;
 
@@ -30,15 +34,35 @@ public class MainActivity extends AppCompatActivity {
 
     ListView listaDeMusicas;
     String items[];
+    EditText buscador;
+    CustomAdapter customAdapter;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
         listaDeMusicas = findViewById(R.id.listmusic);
+        buscador = findViewById(R.id.txtBuscar);
+
+        buscador.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+
+            }
+
+            @Override
+            public void onTextChanged(CharSequence s, int start, int before, int after) {
+                //customAdapter.getFilter().filter(s);
+            }
+
+            @Override
+            public void afterTextChanged(Editable editable) {
+
+            }
+        });
 
         runtimePermission();
-
     }
 
     public void runtimePermission(){
@@ -80,7 +104,7 @@ public class MainActivity extends AppCompatActivity {
         for(int i=0;i<misMusicas.size();i++){
             items[i] = misMusicas.get(i).getName().toString().replace(".mp3","").replace(".wav","");
         }
-        customAdapter customAdapter = new customAdapter();
+        customAdapter = new CustomAdapter();
         listaDeMusicas.setAdapter(customAdapter);
 
         listaDeMusicas.setOnItemClickListener(new AdapterView.OnItemClickListener() {
@@ -96,7 +120,7 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
-    class customAdapter extends BaseAdapter{
+    class CustomAdapter extends BaseAdapter implements com.henry.musicapp.CustomAdapter {
 
         @Override
         public int getCount() {
@@ -112,6 +136,7 @@ public class MainActivity extends AppCompatActivity {
         public long getItemId(int position) {
             return 0;
         }
+
 
         @Override
         public View getView(int position, View convertView, ViewGroup parent) {
